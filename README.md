@@ -74,7 +74,7 @@ The script defines several variables that control its behavior. Here are some im
 Contributions to the script are welcome. If you find any issues or have suggestions for improvement, please create an issue or submit a pull request.
 
 ## Contact
-For any inquiries or questions, please contact [https://abdelrhman.khamis.work/](Me)
+For any inquiries or questions, please contact (https://abdelrhman.khamis.work/)[Me]
 
 Feel free to modify this template to suit your specific requirements.
 
