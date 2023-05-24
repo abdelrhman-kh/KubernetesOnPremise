@@ -37,7 +37,7 @@ chmod +x Kubernetes.sh
 <ol>
   <li>Installation of Kubernetes prerequisites</li>
   <li>Configuration of container runtimes</li>
-  <li>Deployment of essential Kubernetes assets</li>
+  <li>Deployment of essential Kubernetes assets like flannel, dashboard, metallb, metrics_server</li>
   <li>Dynamic input for Master IP, Master Host, Workers IP, Workers Host, and Pod's Network ID/Subnet</li>
 </ol>
 
@@ -48,7 +48,7 @@ The script prompts for input to configure a Kubernetes cluster. It asks for the 
 Before running the script, ensure that the following prerequisites are met:
 
 <ol>
-  <li>The script is being executed on an Ubuntu-based system.</li>
+  <li>The script is being executed on an Ubuntu-based system `18.04`,`20.04`,`22.04`.</li>
   <li>The user has sudo privileges.</li>
   <li>Internet connectivity is available to download dependencies and Kubernetes assets.</li>
 </ol>
