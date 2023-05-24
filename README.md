@@ -22,7 +22,7 @@ Before running the script, ensure that the following prerequisites are met:
 ### Clone the repository:
 
 ```bash
-   git clone https://github.com/abdelrhman-kh/KubernetesOnPremise.git
+git clone https://github.com/abdelrhman-kh/KubernetesOnPremise.git
 ```
 
 ### Change to the repository directory:
