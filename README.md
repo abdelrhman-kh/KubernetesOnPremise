@@ -68,7 +68,7 @@ Choose Container Runtime do you want to install
 #? 2
 
 ```
-![Screenshot from 2023-05-24 15-46-54.png](/Screenshot from 2023-05-24 15-46-54.png)
+![Screenshot from 2023-05-24 15-46-54.png](Screenshot from 2023-05-24 15-46-54.png)
 
 ## Contributing
 Contributions to the script are welcome. If you find any issues or have suggestions for improvement, please create an issue or submit a pull request.
