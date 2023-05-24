@@ -46,9 +46,11 @@ The script prompts for input to configure a Kubernetes cluster. It asks for the 
 ## Prerequisites
 Before running the script, ensure that the following prerequisites are met:
 
-  -The script is being executed on an Ubuntu-based system like `18.04` , `20.04` , `22.04`
-  -The user has sudo privileges.
-  -Internet connectivity is available to download dependencies and Kubernetes assets.
+- The script is being executed on an Ubuntu-based system like `18.04` , `20.04` , `22.04`
+
+- The user has sudo privileges.
+
+- Internet connectivity is available to download dependencies and Kubernetes assets.
 
 
 ## Functions
