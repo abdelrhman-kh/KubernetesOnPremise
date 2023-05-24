@@ -1,5 +1,35 @@
 # KubernetesOnPremise
 
+# Bash Script README
+
+This bash script provides a set of variables and functions for managing a Kubernetes cluster. It includes configurations for text colors, background colors, font styles, and various versions of Kubernetes and container runtimes.
+
+## Usage
+
+To use this script, follow the steps below:
+
+1. Open a terminal and running the following command:
+
+
+### Clone the repository:
+
+```bash
+   git clone https://github.com/abdelrhman-kh/KubernetesOnPremise.git
+```
+
+### Change to the repository directory:
+
+```bash
+cd KubernetesOnPremise
+```
+### Make the script executable:
+```bash
+chmod +x Kubernetes.sh
+```
+### Run the script:
+```bash
+./Kubernetes.sh
+```
 
 ## Features
 
