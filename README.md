@@ -16,9 +16,9 @@ Before running the script, ensure that the following prerequisites are met:
 
 ## Usage
 
-To use this script, follow the steps below:
+#### To use this script, follow the steps below:
 
-1. Open a terminal and running the following command:
+##### Open a terminal and running the following command:
 
 
 ### Clone the repository:
