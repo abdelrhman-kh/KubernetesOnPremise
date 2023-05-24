@@ -1,8 +1,8 @@
 # KubernetesOnPremise
 
-# Bash Script README
+# Intro README
 
-This bash script provides a set of variables and functions for managing a Kubernetes cluster. It includes configurations for text colors, background colors, font styles, and various versions of Kubernetes and container runtimes.
+This bash script is fully automated provides a set of variables and functions for install a Kubernetes cluster On Premise like `bare-metal` or `virtual machine`. It includes install many versions of Kubernetes cluster and configura it and various versions of container runtimes. and setup essential Kubernetes assets like flannel, dashboard, metallb, metrics_server 
 
 
 ## Prerequisites
