@@ -38,7 +38,36 @@ chmod +x Kubernetes.sh
 ```bash
 ./Kubernetes.sh
 ```
+### Follow the prompts and experience the time-saving magic!
+```bash
+Enter Master IP: 192.168.1.50
+Your Master IP is 192.168.1.50 
+Enter Master Host Name: master.kube.test
+Your Master Host is master.kube.test 
+Enter Workers IP: 192.168.1.51
+Your Worker IP is 192.168.1.51 
+Enter Workers Host Name: worker.kube.test
+Your Worker Host is worker.kube.test 
+Enter Pod's Network ID / Subnet: 10.244.0.0/16
+Your Pod's Network ID / Subnet is 10.244.0.0/16 
+[sudo] password for master: 
+Choose Node do you want to install Kubernetes on it 
+1) Master
+2) Workers
+#? 1
+Choose Kubernetes Version do you want to install 
+1) 1.21.5-00
+2) 1.24.13-00
+3) 1.25.9-00
+4) 1.26.4-00
+5) latest
+#? 5
+Choose Container Runtime do you want to install 
+1) CRI-O
+2) Containerd
+#? 2
 
+```
 
 ## Contributing
 Contributions to the script are welcome. If you find any issues or have suggestions for improvement, please create an issue or submit a pull request.
