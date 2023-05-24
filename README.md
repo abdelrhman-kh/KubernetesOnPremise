@@ -43,17 +43,12 @@ chmod +x Kubernetes.sh
 
 The script prompts for input to configure a Kubernetes cluster. It asks for the `master IP address`, `master host name`, `workers' IP addresses`, `workers' host names`, and the `pod's network ID or subnet`. These values are used to set up the cluster and deploy Kubernetes resources.
 
-
 ## Prerequisites
 Before running the script, ensure that the following prerequisites are met:
 
-<ol>
-  <li>The script is being executed on an Ubuntu-based system </li> `18.04`,`20.04`,`22.04`.
-  <li>The user has sudo privileges.</li>
-  <li>Internet connectivity is available to download dependencies and Kubernetes assets.</li>
-</ol>
-
-
+  -The script is being executed on an Ubuntu-based system like `18.04` , `20.04` , `22.04`
+  -The user has sudo privileges.
+  -Internet connectivity is available to download dependencies and Kubernetes assets.
 
 
 ## Functions
