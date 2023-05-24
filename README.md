@@ -33,23 +33,22 @@ chmod +x Kubernetes.sh
 
 ## Features
 
-### Text Colors
-
-The script defines variables for different text colors, such as red, green, yellow, blue, magenta, and cyan. These variables can be used to display colored text in the terminal.
-
-### Background Colors
-
-Similarly, the script defines variables for different background colors, including black, white, red, green, yellow, blue, magenta, and cyan. These variables can be used to set the background color of text in the terminal.
-
-### Font Styles
-
-The script provides variables for different font styles, such as bold, underline, blink, reverse, and hidden. These variables can be used to format text with the desired font style.
-
-### Kubernetes Cluster Configuration
+### Installation of Kubernetes prerequisites
+### Configuration of container runtimes
+### Deployment of essential Kubernetes assets
+### Dynamic input for Master IP, Master Host, Workers IP, Workers Host, and Pod's Network ID/Subnet
 
 The script prompts for input to configure a Kubernetes cluster. It asks for the master IP address, master host name, workers' IP addresses, workers' host names, and the pod's network ID or subnet. These values are used to set up the cluster and deploy Kubernetes resources.
 
-### Functions
+
+## Prerequisites
+Before running the script, ensure that the following prerequisites are met:
+
+The script is being executed on an Ubuntu-based system.
+The user has sudo privileges.
+Internet connectivity is available to download dependencies and Kubernetes assets.
+
+## Functions
 
 The script includes several functions:
 
@@ -58,6 +57,23 @@ The script includes several functions:
 - `Install-kubernetes-prerequisite`: This function installs the prerequisite packages for Kubernetes. It uses the version specified in the script's `Versions` array.
 
 - `Install-Cri-o-prerequisite`: This function installs the prerequisite packages for the CRI-O container runtime. It configures the appropriate package sources based on the operating system version.
+
+## Script Variables
+The script defines several variables that control its behavior. Here are some important variables:
+<ol>
+  <li>Text Color Variables: Variables defining ANSI color codes for text.</li>
+  <li>Background Color Variables: Variables defining ANSI color codes for background colors.</li>
+  <li>Font Style Variables: Variables defining ANSI codes for font styles.</li>
+  <li>Configuration File Paths: Variables specifying the paths of various configuration files used by the script.</li>
+   <li>Dynamic Variables: Variables derived from user input or system information, such as OS version, container runtime version, etc.</li>
+   <li>Kubernetes Assets: Variables storing the URLs of essential Kubernetes assets (flannel, dashboard, metallb, metrics_server).</li>
+</ol>
+
+
+
+
+
+
 
 ## License
 
