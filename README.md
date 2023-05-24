@@ -33,10 +33,13 @@ chmod +x Kubernetes.sh
 
 ## Features
 
-### Installation of Kubernetes prerequisites
-### Configuration of container runtimes
-### Deployment of essential Kubernetes assets
-### Dynamic input for Master IP, Master Host, Workers IP, Workers Host, and Pod's Network ID/Subnet
+
+<ol>
+  ##<li>Installation of Kubernetes prerequisites</li>
+  ##<li>Configuration of container runtimes</li>
+  ##<li>Deployment of essential Kubernetes assets</li>
+  ##<li>Dynamic input for Master IP, Master Host, Workers IP, Workers Host, and Pod's Network ID/Subnet</li>
+</ol>
 
 The script prompts for input to configure a Kubernetes cluster. It asks for the master IP address, master host name, workers' IP addresses, workers' host names, and the pod's network ID or subnet. These values are used to set up the cluster and deploy Kubernetes resources.
 
@@ -44,9 +47,14 @@ The script prompts for input to configure a Kubernetes cluster. It asks for the 
 ## Prerequisites
 Before running the script, ensure that the following prerequisites are met:
 
-The script is being executed on an Ubuntu-based system.
-The user has sudo privileges.
-Internet connectivity is available to download dependencies and Kubernetes assets.
+<ol>
+  <li>The script is being executed on an Ubuntu-based system.</li>
+  <li>The user has sudo privileges.</li>
+  <li>Internet connectivity is available to download dependencies and Kubernetes assets.</li>
+</ol>
+
+
+
 
 ## Functions
 
