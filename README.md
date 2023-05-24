@@ -4,6 +4,16 @@
 
 This bash script provides a set of variables and functions for managing a Kubernetes cluster. It includes configurations for text colors, background colors, font styles, and various versions of Kubernetes and container runtimes.
 
+
+## Prerequisites
+Before running the script, ensure that the following prerequisites are met:
+
+- The script is being executed on an Ubuntu-based system like `18.04` , `20.04` , `22.04`
+
+- The user has sudo privileges.
+
+- Internet connectivity is available to download dependencies and Kubernetes assets.
+
 ## Usage
 
 To use this script, follow the steps below:
@@ -42,16 +52,6 @@ chmod +x Kubernetes.sh
 </ol>
 
 The script prompts for input to configure a Kubernetes cluster. It asks for the `master IP address`, `master host name`, `workers' IP addresses`, `workers' host names`, and the `pod's network ID or subnet`. These values are used to set up the cluster and deploy Kubernetes resources.
-
-## Prerequisites
-Before running the script, ensure that the following prerequisites are met:
-
-- The script is being executed on an Ubuntu-based system like `18.04` , `20.04` , `22.04`
-
-- The user has sudo privileges.
-
-- Internet connectivity is available to download dependencies and Kubernetes assets.
-
 
 ## Functions
 
