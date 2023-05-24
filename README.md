@@ -41,7 +41,7 @@ chmod +x Kubernetes.sh
   <li>Dynamic input for Master IP, Master Host, Workers IP, Workers Host, and Pod's Network ID/Subnet</li>
 </ol>
 
-The script prompts for input to configure a Kubernetes cluster. It asks for the master IP address, master host name, workers' IP addresses, workers' host names, and the pod's network ID or subnet. These values are used to set up the cluster and deploy Kubernetes resources.
+The script prompts for input to configure a Kubernetes cluster. It asks for the `master IP address`, `master host name`, `workers' IP addresses`, `workers' host names`, and the `pod's network ID or subnet`. These values are used to set up the cluster and deploy Kubernetes resources.
 
 
 ## Prerequisites
