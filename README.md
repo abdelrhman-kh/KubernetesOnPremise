@@ -6,7 +6,7 @@
 ## Prerequisites
 Before running the script, ensure that the following prerequisites are met:
 
-- The script is being executed on an Ubuntu-based system like `18.04` , `20.04` , `22.04`
+- The script is being executed on an Ubuntu-based system like `18.04` , `20.04` , `22.04` , and at least 2 GB memory & 2 CPU 
 
 - The user has sudo privileges.
 
