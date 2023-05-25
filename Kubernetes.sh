@@ -44,8 +44,8 @@ export containerd_daemon=/etc/containerd/config.toml
 export bashrc=~/.bashrc
 
 # Define dynamic variables
-partial_namespace=""
-partial_pod_name=""
+export partial_namespace=""
+export partial_pod_name=""
 export ip1=""
 export ip2=""
 
