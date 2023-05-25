@@ -46,6 +46,8 @@ export bashrc=~/.bashrc
 # Define dynamic variables
 partial_namespace=""
 partial_pod_name=""
+export ip1=""
+export ip2=""
 
 
 # Get OS Version Number
@@ -121,6 +123,33 @@ read -p "Enter Pod's Network ID / Subnet: " CIDR
             echo -e "${YELLOW}${BOLD}Your Pod's Network ID / Subnet is ${CIDR} ${NOCOLOR}"
     fi
 
+# Function to check if two IPs belong to the same network and the fourth octet of the second IP is not lower than the first IP
+function check_same_network() {
+    export ip1=${1}
+    export ip2=${2}
+
+    export network1=$(echo "${ip1}" | cut -d '.' -f 1-3)
+    export network2=$(echo "${ip2}" | cut -d '.' -f 1-3)
+    export octet4_ip1=$(echo "${ip1}" | cut -d '.' -f 4)
+    export octet4_ip2=$(echo "${ip2}" | cut -d '.' -f 4)
+
+    if [ "${network1}" = "${network2}" ] && [ "${octet4_ip2}" -ge "${octet4_ip1}" ]; then
+        echo "${YELLOW}${BOLD}The IP addresses ${ip1} and ${ip2} belong to the same network.${NOCOLOR}"
+    else
+        echo "${RED}${BOLD}The IP addresses ${ip1} and ${ip2} do not belong to the same network or the fourth octet of the second IP is lower than the first IP. Please re-enter the IP addresses. and fix them like: first IP : 192.168.1.20 , second IP : 192.168.1.30 ${NOCOLOR}"
+        
+        read -p "Please re-enter the first IP address which is it start ip usage by load balancer : " ip1
+
+        read -p "Please re-enter the second IP address which is it end ip usage by load balancer : " ip2
+
+        check_same_network "${ip1}" "${ip2}"
+    fi
+}
+# Read two IP addresses from the user
+read -p "Enter the first IP address which is it start ip usage by load balancer : " ip1
+read -p "Enter the second IP address which is it end ip usage by load balancer : " ip2
+# Call the function to check if they belong to the same network and the fourth octet of the second IP is not lower than the first IP
+check_same_network "${ip1}" "${ip2}"
 # function for waiting for pod to reach running status and do some actions
 function pod-wait-status() {
 
@@ -454,7 +483,7 @@ metadata:
   namespace: metallb-system
 spec:
   addresses:
-  - 192.168.1.240-192.168.1.250
+  - ${ip1}-${ip2}
 EOF
      
 
@@ -701,5 +730,3 @@ if [ -z "${Master_Host}" -o -z "${Master_Host}" -o -z "${CIDR}" ];
             esac   
         done
 fi
-
-
