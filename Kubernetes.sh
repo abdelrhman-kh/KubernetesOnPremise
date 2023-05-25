@@ -3,7 +3,7 @@
 # Variables of Text Color's
 export NOCOLOR='\033[0m'    #'0;0' is NoColor's ANSI color code          ${NOCOLOR}
 export RED='\033[0;31m'     #'0;31' is Red's ANSI color code                 ${RED}
-export GREEN='\033[0;32m'   #'0;32' is Green's ANSI color code             ${GREEN}${BOLD}
+export GREEN='\033[0;32m'   #'0;32' is Green's ANSI color code             ${GREEN}
 export YELLOW='\033[1;33m'  #'1;33' is Yellow's ANSI color code           ${YELLOW}
 export BLUE='\033[0;34m'    #'0;34' is Blue's ANSI color code               ${BLUE}
 export MAGENTA='\033[0;35m' #'0;35' is Magenta's ANSI color code         ${MAGENTA}
