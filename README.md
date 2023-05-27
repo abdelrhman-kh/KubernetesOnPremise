@@ -40,7 +40,7 @@ chmod +x Kubernetes.sh
 ```
 ### Follow the prompts and experience the time-saving magic!
 
-![Screenshot from 2023-05-24 15-46-54.png](https://github.com/abdelrhman-kh/KubernetesOnPremise/blob/main/Screenshot%20from%202023-05-24%2015-46-54.png))
+![Screenshot from 2023-05-24 15-46-54.png](https://github.com/abdelrhman-kh/KubernetesOnPremise/blob/main/Screenshot%20from%202023-05-24%2015-46-54.png)
 
 ## Contributing
 Contributions to the script are welcome. If you find any issues or have suggestions for improvement, please create an issue or submit a pull request.
