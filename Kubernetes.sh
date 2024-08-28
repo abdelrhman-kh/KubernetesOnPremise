@@ -229,7 +229,7 @@ function Install-kubernetes-prerequisite() {
 
                 source ${bashrc}
 
-                sudo apt-get install -y kubelet kubectl  kubeadm  --allow-change-held-packages
+                sudo apt-get install -y kubelet kubectl kubeadm --allow-change-held-packages
 
                 source ${bashrc}
             ;;
@@ -245,7 +245,7 @@ function Install-kubernetes-prerequisite() {
 
                 source ${bashrc}
 
-                sudo apt-get install -y kubelet  kubectl  kubeadm  --allow-change-held-packages
+                sudo apt-get install -y kubelet kubectl kubeadm --allow-change-held-packages
 
                 source ${bashrc}
             ;;
@@ -261,7 +261,7 @@ function Install-kubernetes-prerequisite() {
 
                 source ${bashrc}
 
-                sudo apt-get install -y kubelet  kubectl  kubeadm  --allow-change-held-packages
+                sudo apt-get install -y kubelet kubectl kubeadm --allow-change-held-packages
 
                 source ${bashrc}
             ;;
@@ -277,7 +277,7 @@ function Install-kubernetes-prerequisite() {
 
                 source ${bashrc}
 
-                sudo apt-get install -y kubelet  kubectl  kubeadm  --allow-change-held-packages
+                sudo apt-get install -y kubelet kubectl kubeadm --allow-change-held-packages
 
                 source ${bashrc}
             ;;
