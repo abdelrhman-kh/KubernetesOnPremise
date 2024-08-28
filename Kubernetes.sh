@@ -30,7 +30,7 @@ export HIDDEN='\033[8m'     #'8' is Hidden's ANSI color code                    
 
 
 # Variables of Array for Different Versions
-export Versions=( "1.21.5-00" "1.24.13-00" "1.25.9-00" "1.26.4-00" "latest" )
+export Versions=( "1.27" "1.28" "1.29" "1.30" "1.31" )
 export Nodes=( "Master" "Workers" )
 export Container_Runtimes=( "CRI-O" "Containerd" )
 
@@ -74,7 +74,7 @@ export Containerd_sock=unix:///run/containerd/containerd.sock
 export flannel=https://github.com/coreos/flannel/raw/master/Documentation/kube-flannel.yml
 export dashboard=https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
 export metallb=https://raw.githubusercontent.com/metallb/metallb/v0.13.7/config/manifests/metallb-native.yaml
-export metrics_server=https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+export metrics_server=https://github.com/kubernetes-sigs/metrics-server/releases/1.31/download/components.yaml
 
 # Variables of Kubernetes Cluster like IP's and Host Names and etc.
 read -p "Enter Master IP: " Master_IP
@@ -214,14 +214,17 @@ function Install-kubernetes-prerequisite() {
 
         source ${bashrc}
 
-        sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common gnupg2 jq
-
-        curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-        
-        echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+        sudo apt-get install -y apt-transport-https ca-certificates curl gpg software-properties-common gnupg2 jq
 
         case ${Version} in
-            1.21.5-00)
+            1.27)
+                # If the directory `/etc/apt/keyrings` does not exist, it should be created before the curl command, read the note below.
+                # sudo mkdir -p -m 755 /etc/apt/keyrings
+                curl -fsSL https://pkgs.k8s.io/core:/stable:/v${Version}/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+                # This overwrites any existing configuration in /etc/apt/sources.list.d/kubernetes.list
+                echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v${Version}/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+                
                 sudo sudo apt update -y
 
                 source ${bashrc}
@@ -230,7 +233,14 @@ function Install-kubernetes-prerequisite() {
 
                 source ${bashrc}
             ;;
-            1.24.13-00)
+            1.28)
+                # If the directory `/etc/apt/keyrings` does not exist, it should be created before the curl command, read the note below.
+                # sudo mkdir -p -m 755 /etc/apt/keyrings
+                curl -fsSL https://pkgs.k8s.io/core:/stable:/v${Version}/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+                # This overwrites any existing configuration in /etc/apt/sources.list.d/kubernetes.list
+                echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v${Version}/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
                 sudo sudo apt update -y
 
                 source ${bashrc}
@@ -239,7 +249,14 @@ function Install-kubernetes-prerequisite() {
 
                 source ${bashrc}
             ;;
-            1.25.9-00)
+            1.29)
+                # If the directory `/etc/apt/keyrings` does not exist, it should be created before the curl command, read the note below.
+                # sudo mkdir -p -m 755 /etc/apt/keyrings
+                curl -fsSL https://pkgs.k8s.io/core:/stable:/v${Version}/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+                # This overwrites any existing configuration in /etc/apt/sources.list.d/kubernetes.list
+                echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v${Version}/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
                 sudo sudo apt update -y
 
                 source ${bashrc}
@@ -248,7 +265,14 @@ function Install-kubernetes-prerequisite() {
 
                 source ${bashrc}
             ;;
-            1.26.4-00)
+            1.30)
+                # If the directory `/etc/apt/keyrings` does not exist, it should be created before the curl command, read the note below.
+                # sudo mkdir -p -m 755 /etc/apt/keyrings
+                curl -fsSL https://pkgs.k8s.io/core:/stable:/v${Version}/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+                # This overwrites any existing configuration in /etc/apt/sources.list.d/kubernetes.list
+                echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v${Version}/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
                 sudo sudo apt update -y
 
                 source ${bashrc}
@@ -257,7 +281,15 @@ function Install-kubernetes-prerequisite() {
 
                 source ${bashrc}
             ;;
-            latest)
+            1.31)
+
+                # If the directory `/etc/apt/keyrings` does not exist, it should be created before the curl command, read the note below.
+                # sudo mkdir -p -m 755 /etc/apt/keyrings
+                curl -fsSL https://pkgs.k8s.io/core:/stable:/v${Version}/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+                # This overwrites any existing configuration in /etc/apt/sources.list.d/kubernetes.list
+                echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v${Version}/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
                 sudo sudo apt update -y
 
                 source ${bashrc}
@@ -267,7 +299,7 @@ function Install-kubernetes-prerequisite() {
                 source ${bashrc}
             ;;
             *)
-                echo "Usage : 1 for 1.21.5-00 or 2 for 1.24.13-00 or 3 for 1.25.9-00 or 4 for 1.26.4-00 or 5 for 1.27.1-00"
+                echo "Usage : 1 for 1.27 or 2 for 1.28 or 3 for 1.29 or 4 for 1.30 or 5 for 1.27.1-00"
             ;;
         esac     
         
@@ -535,23 +567,23 @@ subjects:
 EOF
 
     case ${Version} in
-        1.21.5-00)
+        1.27)
             export Admin_Token=$(kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/admin-user -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}" && echo "" )
             break
         ;;
-        1.24.13-00)
+        1.28)
             export Admin_Token=$(kubectl -n kubernetes-dashboard create token admin-user --kubeconfig=${Kube_Config_non_root})
             break
         ;;
-        1.25.9-00)
+        1.29)
             export Admin_Token=$(kubectl -n kubernetes-dashboard create token admin-user --kubeconfig=${Kube_Config_non_root})
             break
         ;;
-        1.26.4-00)
+        1.30)
             export Admin_Token=$(kubectl -n kubernetes-dashboard create token admin-user --kubeconfig=${Kube_Config_non_root})
             break
         ;;
-        latest)
+        1.31)
             export Admin_Token=$(kubectl -n kubernetes-dashboard create token admin-user --kubeconfig=${Kube_Config_non_root})
             break
         ;;
@@ -665,23 +697,23 @@ if [ -z "${Master_Host}" -o -z "${Master_Host}" -o -z "${CIDR}" ];
                     select Version in "${Versions[@]}"
                         do
                             case ${Version} in
-                                1.21.5-00)
+                                1.27)
                                     Master_Main #call function
                                     break
                                 ;;
-                                1.24.13-00)
+                                1.28)
                                     Master_Main #call function
                                     break
                                 ;;
-                                1.25.9-00)
+                                1.29)
                                     Master_Main #call function
                                     break
                                 ;;
-                                1.26.4-00)
+                                1.30)
                                     Master_Main #call function
                                     break
                                 ;;
-                                latest)
+                                1.31)
                                     Master_Main #call function
                                     break
                                 ;;
@@ -697,23 +729,23 @@ if [ -z "${Master_Host}" -o -z "${Master_Host}" -o -z "${CIDR}" ];
                     select Version in "${Versions[@]}"
                         do
                             case ${Version} in
-                                1.21.5-00)
+                                1.27)
                                     Worker_Main #call function
                                     break
                                 ;;
-                                1.24.13-00)
+                                1.28)
                                     Worker_Main #call function
                                     break
                                 ;;
-                                1.25.9-00)
+                                1.29)
                                     Worker_Main #call function
                                     break
                                 ;;
-                                1.26.4-00)
+                                1.30)
                                     Worker_Main #call function
                                     break
                                 ;;
-                                latest)
+                                1.31)
                                     Worker_Main #call function
                                     break
                                 ;;
