@@ -134,9 +134,9 @@ function check_same_network() {
     export octet4_ip2=$(echo "${ip2}" | cut -d '.' -f 4)
 
     if [ "${network1}" = "${network2}" ] && [ "${octet4_ip2}" -ge "${octet4_ip1}" ]; then
-        echo "${YELLOW}${BOLD}The IP addresses ${ip1} and ${ip2} belong to the same network.${NOCOLOR}"
+        echo -e "${YELLOW}${BOLD}The IP addresses ${ip1} and ${ip2} belong to the same network.${NOCOLOR}"
     else
-        echo "${RED}${BOLD}The IP addresses ${ip1} and ${ip2} do not belong to the same network or the fourth octet of the second IP is lower than the first IP. Please re-enter the IP addresses. and fix them like: first IP : 192.168.1.20 , second IP : 192.168.1.30 ${NOCOLOR}"
+        echo -e "${RED}${BOLD}The IP addresses ${ip1} and ${ip2} do not belong to the same network or the fourth octet of the second IP is lower than the first IP. Please re-enter the IP addresses. and fix them like: first IP : 192.168.1.20 , second IP : 192.168.1.30 ${NOCOLOR}"
         
         read -p "Please re-enter the first IP address which is it start ip usage by load balancer : " ip1
 
@@ -229,7 +229,7 @@ function Install-kubernetes-prerequisite() {
 
                 source ${bashrc}
 
-                sudo apt-get install -y kubelet=${Version} kubectl=${Version} kubeadm="${Version}" --allow-change-held-packages
+                sudo apt-get install -y kubelet kubectl  kubeadm  --allow-change-held-packages
 
                 source ${bashrc}
             ;;
@@ -245,7 +245,7 @@ function Install-kubernetes-prerequisite() {
 
                 source ${bashrc}
 
-                sudo apt-get install -y kubelet=${Version} kubectl=${Version} kubeadm="${Version}" --allow-change-held-packages
+                sudo apt-get install -y kubelet  kubectl  kubeadm  --allow-change-held-packages
 
                 source ${bashrc}
             ;;
@@ -261,7 +261,7 @@ function Install-kubernetes-prerequisite() {
 
                 source ${bashrc}
 
-                sudo apt-get install -y kubelet=${Version} kubectl=${Version} kubeadm="${Version}" --allow-change-held-packages
+                sudo apt-get install -y kubelet  kubectl  kubeadm  --allow-change-held-packages
 
                 source ${bashrc}
             ;;
@@ -277,7 +277,7 @@ function Install-kubernetes-prerequisite() {
 
                 source ${bashrc}
 
-                sudo apt-get install -y kubelet=${Version} kubectl=${Version} kubeadm="${Version}" --allow-change-held-packages
+                sudo apt-get install -y kubelet  kubectl  kubeadm  --allow-change-held-packages
 
                 source ${bashrc}
             ;;
